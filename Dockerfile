@@ -1,9 +1,14 @@
-FROM nginx:stable-alpine
+# Use the official Nginx image
+FROM nginx:alpine
 
-# Copy the single-page site into nginx's default html location
-COPY index.html /usr/share/nginx/html/index.html
+# Copy your custom Nginx config
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+
+# Copy your static website files
+COPY . /usr/share/nginx/html
 
 # Expose port 80
 EXPOSE 80
 
-# Use the default nginx command provided by the base image
+# Start Nginx
+CMD ["nginx", "-g", "daemon off;"]
