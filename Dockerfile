@@ -1,6 +1,5 @@
 FROM nginx:stable-alpine
 
-
 # Copy the single-page site into nginx's default html location
 COPY index.html /usr/share/nginx/html/index.html
 
