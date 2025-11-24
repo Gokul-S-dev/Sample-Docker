@@ -11,5 +11,6 @@ COPY ngnix.conf /etc/nginx/conf.d/default.conf
 # Expose port 80
 EXPOSE 80
 
+
 # Use the default nginx command provided by the base image (no CMD needed)
 CMD [ "nginx", "-g", "daemon off;" ]
